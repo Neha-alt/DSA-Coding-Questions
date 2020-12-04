@@ -1,0 +1,13 @@
+//https://practice.geeksforgeeks.org/problems/middle-of-three2926/1
+class Solution{
+    int middle(int A, int B, int C){
+       int max = Math.max(Math.max(A,B),C);
+       int min = Math.min(Math.min(A,B),C);
+       if(A>min && A<max)
+       return A;
+       else if(B>min && B<max)
+       return B;
+       else
+       return C;
+    }
+}
