@@ -1,0 +1,33 @@
+//https://practice.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/1
+class Kadane{
+    
+    // Function to find subarray with maximum sum
+    // arr: input array
+    // n: size of array
+    int maxSubarraySum(int arr[], int n){
+        //O(n2)
+        // int max = 0;
+        // for(int i=0;i<n;i++){
+        //     int sum = 0;
+        //     for(int j=0;j<n;j++){
+        //         sum+=arr[j];
+        //     }
+        //     if(sum>max)
+        //     max = sum;
+        // }
+        // return max;
+        
+        //Kadane's Algo // -2,-3,4,-1,-2,1,5,-3
+        int sum = 0;
+        int max = arr[0];
+        for(int i=0;i<n;i++){
+            sum+=arr[i];
+            if(sum>max)
+            max = sum;
+            if(sum<0)
+            sum=0;
+        }
+        return max;
+    }
+    
+}
