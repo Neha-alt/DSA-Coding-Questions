@@ -1,0 +1,14 @@
+//https://leetcode.com/problems/find-the-duplicate-number/
+//Leetcode-287
+ public int findDuplicate(int[] nums) {
+        //using set
+        Set<Integer> set = new HashSet<>();
+        for(int i : nums){
+            if(set.contains(i)){
+                return i;
+            }
+            else
+                set.add(i);
+        }
+        return -1;
+    }
