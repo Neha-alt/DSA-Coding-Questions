@@ -1,0 +1,27 @@
+//https://www.pepcoding.com/resources/online-java-foundation/introduction-to-recursion/power-logarithmic-official/ojquestion#
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int x=sc.nextInt();
+        int n=sc.nextInt();
+        int f = power(x,n);
+        System.out.println(f);
+    }
+
+    public static int power(int x, int n){
+        //power = x^n/2 * x^n/2
+        if(n==0)
+        return 1;
+        int p = power(x,n/2);
+        int q = p*p;
+        if(n%2!=0){
+            q = q*x;
+        }
+        return q;
+    }
+
+}
