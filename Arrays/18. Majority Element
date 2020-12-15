@@ -1,0 +1,20 @@
+//https://leetcode.com/problems/majority-element/
+class Solution {
+    public int majorityElement(int[] arr) {
+         // Moore's Voting Algo 
+            int count=0;
+        int candidate = 0;
+        for(int num:arr){
+            if(count==0)
+                candidate = num;//2
+            
+            if(candidate==num)
+                count++;
+            else count--;
+            
+            
+        }
+        return candidate;
+    }
+    
+}
