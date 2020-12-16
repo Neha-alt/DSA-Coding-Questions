@@ -1,0 +1,26 @@
+//https://www.pepcoding.com/resources/online-java-foundation/recursion-in-arrays/first-index-official/ojquestion
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+       Scanner sc = new Scanner(System.in);
+       int n=sc.nextInt();
+       int a[]= new int[n];
+       for(int i=0;i<n;i++){
+           a[i]=sc.nextInt();
+       }
+       int x = sc.nextInt();
+       int f = firstIndex(a,0,x);
+       System.out.println(f);
+    }
+
+    public static int firstIndex(int[] arr, int idx, int x){
+        int rs = firstIndex(arr,idx+1,x);
+        if(rs==x){
+            return idx;
+        }
+    }
+
+}
