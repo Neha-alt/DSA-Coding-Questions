@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int a[][] = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+        for(int i=0;i<n;i++){
+        //find least in row           
+            int le=0;
+            for(int j=1;j<n;j++){
+                if(a[i][j]<a[i][le]){
+                    le=j;
+                }
+            }
+            //find if element found is largest in that col
+            boolean flag=true;
+            for(int k=0;k<n;k++){
+                if(a[k][le]>a[i][le]){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag==true){
+                System.out.println(a[i][le]);
+                return;
+            }
+        }
+        System.out.println("Invalid input");
+    }
+
+}
