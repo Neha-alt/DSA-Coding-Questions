@@ -1,0 +1,50 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        Scanner sc = new Scanner(System.in);
+        int r = sc.nextInt();
+        int c = sc.nextInt();
+        int a[][] = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+        int maxj = c - 1;
+        int minj = 0;
+        int maxi = r - 1;
+        int mini = 0;
+        int ele = r * c;
+        int cnt = 0;
+        while (cnt < ele) {
+            //right wall
+            for (int i = mini; i <= maxi && cnt < ele; i++) {
+                System.out.println(a[i][minj]);
+                cnt++;
+            }
+            minj++;
+            //bottom wall
+            for (int i = minj; i <= maxj && cnt < ele; i++) {
+                System.out.println(a[maxi][i]);
+                cnt++;
+            }
+            maxi--;
+            //left wall
+            for (int i = maxi; i >= mini && cnt < ele; i--) {
+                System.out.println(a[i][maxj]);
+                cnt++;
+            }
+            maxj--;
+            //top wall
+            for (int i = maxj; i >= minj && cnt < ele; i--) {
+                System.out.println(a[mini][i]);
+                cnt++;
+            }
+            mini++;
+        }
+    }
+
+}
