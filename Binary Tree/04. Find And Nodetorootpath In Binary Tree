@@ -1,0 +1,37 @@
+public static boolean find(Node node, int data){
+    if(node==null){
+        return false;
+    }
+    if(node.data==data){
+        return true;
+    }
+    boolean ls = find(node.left,data);
+    if(ls)
+    return true;
+    boolean rs = find(node.right,data);
+    if(rs)
+    return true;
+    return false;
+  }
+
+  public static ArrayList<Integer> nodeToRootPath(Node node, int data){
+    if(node==null){
+        return new ArrayList<>();
+    }
+    if(node.data==data){
+        ArrayList<Integer> ll = new ArrayList<>();
+        ll.add(node.data);
+        return ll;
+    }
+    ArrayList<Integer> ll = nodeToRootpath(node.left,data);//will return arraylist
+    if(ll.size()>0){
+        ll.add(node.data);//add root node to returned arraylist
+        return ll;
+    }
+    ArrayList<Integer> ll = nodeToRootpath(node.right,data);
+    if(ll.size()>0){
+        ll.add(node.data);
+        return ll;
+    }
+     return new ArrayList<>();
+  }
