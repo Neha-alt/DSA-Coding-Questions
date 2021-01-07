@@ -1,0 +1,36 @@
+public static int size(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        int ls = size(node.left);
+        int rs = size(node.right);
+        int sz = ls + rs + 1;
+        return sz;
+    }
+
+    public static int sum(Node node) {
+        if (node == null)
+            return 0;
+        int ls = sum(node.left);
+        int rs = sum(node.right);
+        int ts = ls + rs + node.data;
+        return ts;
+    }
+
+    public static int max(Node node) {
+        if (node == null)
+            return 0;
+        int ls = max(node.left);
+        int rs = max(node.right);
+        int hg = Math.max(node.data, Math.max(ls, rs));
+        return hg;
+    }
+
+    public static int height(Node node) {
+        if (node == null)
+            return -1;
+        int ls = height(node.left);
+        int rs = height(node.right);
+        int th = Math.max(ls, rs) + 1;
+        return th;
+    }
