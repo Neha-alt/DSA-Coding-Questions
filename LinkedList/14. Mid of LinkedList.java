@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/middle-of-the-linked-list/submissions/
+//https://www.youtube.com/watch?v=aiFAbMOHqIc
 class Solution {
     public ListNode middleNode(ListNode head) {
         if(head==null && head.next==null) return head;
