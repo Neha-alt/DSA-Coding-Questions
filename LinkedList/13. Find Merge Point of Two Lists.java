@@ -1,5 +1,5 @@
 //https://youtu.be/8CACsqPWpHo
-
+//leetcode 160
 public class Solution {
     public int length(ListNode head){
         int c=0;
